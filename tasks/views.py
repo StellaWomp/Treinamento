@@ -4,6 +4,8 @@ from django.views.generic.edit import UpdateView, CreateView
 from .models import Task
 from .forms import TaskForm, TaskFormCreate
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method__decorator
 
 # Create your views here.
 
@@ -12,6 +14,7 @@ from django.urls import reverse_lazy
 #    return render(request,'tasks/task_list.html',{'tasks': tasks})
 
 #Utlizando classe
+@method_decorator(login_reequired, name='dispatch')
 class TaskListView(ListView):
     model = Task
     template_name = 'tasks/task_list.html'
@@ -25,7 +28,7 @@ class TaskListView(ListView):
         return queryset
 
 
-class TaskUpsdateView(UpdateView):
+class TaskUpdateView(UpdateView):
     model = Task
     form_class = TaskForm
     template_name = 'tasks/task_edit.html'

@@ -16,17 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from tasks.views import TaskListView, TaskUpsdateView, TaskDeleteView, TaskCreateView
-#from tasks.views import task_list
+from tasks.views import TaskListView, TaskUpdateView, TaskDeleteView, TaskCreateView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('',task_list)
-    path('', TaskListView.as_view(), name = 'task-list'),
-    path('tasks/<int:pk>/edit/', TaskUpsdateView.as_view(), name = 'task-edit'),
-    path('tasks/<int:pk>/delete/', TaskDeleteView.as_view(), name = 'task-delete'),
-    path('tasks/create/', TaskCreateView.as_view(), name = 'task-create'),
-    path('account/', include('account.urls'))
-
-
+    path('', TaskListView.as_view(), name='task-list'),
+    path('tasks/<int:pk>/edit/', TaskUpdateView.as_view(), name='task-edit'), 
+    path('tasks/<int:pk>/delete/', TaskDeleteView.as_view(), name='task-delete'),
+    path('tasks/create/', TaskCreateView.as_view(), name='task-create'),
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path('account/', include('account.urls')),  # Certifique-se que o 'account.urls' está correto
 ]
