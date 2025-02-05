@@ -5,7 +5,7 @@ from .models import Task
 from .forms import TaskForm, TaskFormCreate
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method__decorator
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 
@@ -14,7 +14,7 @@ from django.utils.decorators import method__decorator
 #    return render(request,'tasks/task_list.html',{'tasks': tasks})
 
 #Utlizando classe
-@method_decorator(login_reequired, name='dispatch')
+@method_decorator(login_required, name='dispatch')
 class TaskListView(ListView):
     model = Task
     template_name = 'tasks/task_list.html'
