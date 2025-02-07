@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-<<<<<<< HEAD
+#<<<<<<< HEAD
 from decouple import config
-=======
->>>>>>> 126cb816e4de728ace93fed5f6f4e684d615e419
+#=======
+#>>>>>>> 126cb816e4de728ace93fed5f6f4e684d615e419
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -131,22 +131,22 @@ LOGOUT_URL = 'logout'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
-DEFAULT_FROM_EMAIL = "desenvolvimentowomp@gmail.com"
+#<<<<<<< HEAD
+#DEFAULT_FROM_EMAIL = "desenvolvimentowomp@gmail.com"
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Quando estiver em produção usa 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST_USER=config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USE_TSL=config('EMAIL_HOST_USE_TSL')
-EMAIL_PORT=config('EMAIL_PORT')
-EMAIL_HOST=config('EMAIL_HOST')
-=======
+#EMAIL_HOST_USER=config('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD=config('EMAIL_HOST_PASSWORD')
+#EMAIL_HOST_USE_TSL=config('EMAIL_HOST_USE_TSL')
+#EMAIL_PORT=config('EMAIL_PORT')
+#EMAIL_HOST=config('EMAIL_HOST')
+#=======
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 #Quando estiver em produção usa EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
->>>>>>> 126cb816e4de728ace93fed5f6f4e684d615e419
+#>>>>>>> 126cb816e4de728ace93fed5f6f4e684d615e419
